@@ -37,7 +37,7 @@ Method: `GET, POST`
 Endpoint: `likes/`  
 
 
-##### GET Tip Detail, Update and Delete Tweet Likes
+##### GET Like Detail, Update and Delete Tweet Likes
 Method: `GET, PUT, PATCH, DELETE`  
 Endpoint: `likes/id`  
 
@@ -47,7 +47,7 @@ Method: `GET, POST`
 Endpoint: `bookmark/`  
 
 
-##### GET Tip Detail, Update and Delete Tweet Bookmarks
+##### GET Bookmark Detail, Update and Delete Tweet Bookmarks
 Method: `GET, PUT, PATCH, DELETE`  
 Endpoint: `bookmark/id`  
 
