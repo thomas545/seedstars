@@ -1,4 +1,15 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+class TimeStampModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
 
 
 
@@ -30,3 +41,22 @@ class Link(models.Model):
     url = models.URLField(null=True, blank=True)
     expanded_url = models.CharField(max_length=200, null=True, blank=True)
     display_url = models.CharField(max_length=200, null=True, blank=True)
+
+
+
+class ContributePythonTip(models.Model):
+    python_tip = models.TextField(max_length=140, unique=True)
+    name_or_id = models.CharField(max_length=200, blank=True)
+    your_email = models.EmailField(blank=True)
+
+
+class TweetLike(TimeStampModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_likes')
+    tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE, related_name='tweet_likes')
+
+
+class TweetBookmark(TimeStampModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_mark')
+    tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE, related_name='tweet_mark')
+
+

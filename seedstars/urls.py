@@ -9,7 +9,7 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
 
     path('', include('tweets.urls')),
 
