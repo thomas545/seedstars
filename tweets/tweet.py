@@ -32,7 +32,7 @@ def get_or_create_tweets(username):
         retweet_count = j.get("retweet_count")
         favorite_count = j.get("favorite_count")
         id = j.get("id")
-        print(id)
+        # print(id)
             # TODO make serializer save
         # print(text == "Plot diagrams with #graphviz\n\nExample: 👇\n(`gv` code copied from fastai utils)\n\nimport graphviz\ndef gv(s): return gr… https://t.co/D7NlsrMim8")
         # for uri in urls:
